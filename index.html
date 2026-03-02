@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B3 Dashboard Pro • Tempo Real</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <h1>B3 Dashboard <span class="live-indicator">● LIVE</span></h1>
+            </div>
+            <div class="market-status">
+                <i class="fas fa-circle" style="color: #00d1b2; font-size: 10px;"></i>
+                <span>Mercado Aberto</span>
+                <span class="separator">|</span>
+                <i class="far fa-clock"></i>
+                <span id="relogio">00:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Card Dividendos -->
+        <div class="card card-dividendos">
+            <div class="card-header">
+                <div class="card-title">
+                    <div class="icon-box icon-blue">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div>
+                        <h2>Top 10 Dividendos</h2>
+                        <span class="card-subtitle">Maiores pagadores do mês</span>
+                    </div>
+                </div>
+                <div class="card-badge">
+                    <i class="fas fa-sync-alt fa-spin"></i>
+                    <span id="update-time-div">30s</span>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table-dividendos">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Empresa</th>
+                            <th>Ticker</th>
+                            <th>Preço</th>
+                            <th>DY %</th>
+                            <th class="trend-col">Tendência</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-dividendos"></tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <span class="footer-info">
+                    <i class="far fa-clock"></i>
+                    Atualizado em: <span id="timestamp-dividendos">--</span>
+                </span>
+                <span class="footer-badge">dados em tempo real</span>
+            </div>
+        </div>
+
+        <!-- Card Valorização -->
+        <div class="card card-valorizacao">
+            <div class="card-header">
+                <div class="card-title">
+                    <div class="icon-box icon-green">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div>
+                        <h2>Top 10 Valorização</h2>
+                        <span class="card-subtitle">Maiores altas do dia</span>
+                    </div>
+                </div>
+                <div class="card-badge">
+                    <i class="fas fa-bolt"></i>
+                    <span>24h</span>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table-valorizacao">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Empresa</th>
+                            <th>Ticker</th>
+                            <th>Preço</th>
+                            <th>Val. %</th>
+                            <th class="chart-col">Gráfico</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-valorizacao"></tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <span class="footer-info">
+                    <i class="far fa-clock"></i>
+                    Atualizado em: <span id="timestamp-valorizacao">--</span>
+                </span>
+                <span class="footer-badge">tempo real</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mini gráficos de tendência -->
+    <div class="trend-indicators">
+        <div class="trend-item" data-ticker="IBOV">
+            <span class="trend-label">IBOV</span>
+            <span class="trend-value positive">128.456 <i class="fas fa-arrow-up"></i></span>
+        </div>
+        <div class="trend-item" data-ticker="IFIX">
+            <span class="trend-label">IFIX</span>
+            <span class="trend-value positive">3.245 <i class="fas fa-arrow-up"></i></span>
+        </div>
+        <div class="trend-item" data-ticker="DOLAR">
+            <span class="trend-label">DÓLAR</span>
+            <span class="trend-value negative">5.87 <i class="fas fa-arrow-down"></i></span>
+        </div>
+        <div class="trend-item" data-ticker="NASDAQ">
+            <span class="trend-label">NASDAQ</span>
+            <span class="trend-value positive">0.89% <i class="fas fa-arrow-up"></i></span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
